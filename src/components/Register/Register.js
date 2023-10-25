@@ -44,8 +44,7 @@ class Register extends React.Component {
                 this.props.onRouteChange('home');
                 alert('Welcome ' + user.name);
             } else {
-                console.log(user)
-                alert(user.response.data);
+                alert("On submit error");
                 // this.props.onRouteChange('signin');
             }
         })
