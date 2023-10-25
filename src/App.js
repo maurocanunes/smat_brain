@@ -84,30 +84,30 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    // this.setState({imageUrl: this.state.input})
-    // fetch('https://mybackend-h756.onrender.com/imageurl', {
-    //     method: 'post',
-    //     headers: {'Content-Type': 'application/json'},
-    //     body: JSON.stringify({
-    //         input: this.state.input
-    //     })
-    //   })
-    //   .then(response => {
-    //     if (response.ok) {
-    //      return response.text()
-    //     } else {
-    //       throw new Error(response.status)
-    //     }
-    //   })
-    //   .then(result => {
-    //     this.displayFacebox(this.calculateFaceLocation(result))
+    this.setState({imageUrl: this.state.input})
+    fetch('https://mybackend-h756.onrender.com/imageurl', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            input: this.state.input
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+         return response.text()
+        } else {
+          throw new Error(response.status)
+        }
+      })
+      .then(result => {
+        this.displayFacebox(this.calculateFaceLocation(result))
         this.updateEntries();
 
-      // })
-      // .catch(error => {
-      //   console.log(error);
-      //   alert('error detecting image! \nCheck your url');
-      // });
+      })
+      .catch(error => {
+        console.log(error);
+        alert('error detecting image! \nCheck your url');
+      });
 
   }
 
