@@ -28,7 +28,7 @@ class Register extends React.Component {
         } else if (password.length < 5) {
             return ('password must contain more than 4 characters');
         }
-        fetch('http://localhost:3000/register', {
+        fetch('https://mybackend-h756.onrender.com/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
