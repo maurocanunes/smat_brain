@@ -49,6 +49,7 @@ class App extends Component {
         })
         .then(response => response.json())
         .then(result => {
+          console.log(result);
           this.setState(Object.assign(this.state.user, {rank: result.rank}))
           this.setState(Object.assign(this.state.user, {entries: result.entries}));
         })
