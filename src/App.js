@@ -123,13 +123,14 @@ class App extends Component {
 
   render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
+    console.log('rank', this.state.user.rank)
     return (
       <div className="App">
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
         { route === 'home' 
           ? <>
               <Logo />
-              <Rank name={this.state.user.name} entries={this.state.user.entries} rank={this.state.user.rank}/>
+              <Rank name={this.state.user.name} entries={this.state.user.entries} position={this.state.user.rank}/>
               <ImageLinkForm 
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}
