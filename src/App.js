@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   loadUser = (data) => {
-    console.log('load user', data)
     this.setState({user: {
         id: data.id,
         name: data.name,
@@ -51,7 +50,6 @@ class App extends Component {
         })
         .then(response => response.json())
         .then(result => {
-          console.log(result);
           this.setState(Object.assign(this.state.user, {rank: result.rank}))
           this.setState(Object.assign(this.state.user, {entries: result.entries}));
         })
@@ -108,7 +106,6 @@ class App extends Component {
 
       })
       .catch(error => {
-        console.log(error);
         alert('error detecting image! \nCheck your url');
       });
 
@@ -126,7 +123,6 @@ class App extends Component {
 
   render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
-    console.log('rank', this.state.user.rank)
     return (
       <div className="App">
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
