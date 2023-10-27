@@ -35,6 +35,7 @@ class App extends Component {
         name: data.name,
         email: data.email,
         entries: data.entries,
+        rank: data.rank,
         joined: data.joined
     }})
   }
