@@ -31,7 +31,9 @@ class SignIn extends  React.Component {
                 password: signInPassword
             })
         })
-        .then(response => response.json())
+        .then(response =>{
+            console.log('response', response)
+             response.json()})
         .then(user => {
             /*
                 data has user
